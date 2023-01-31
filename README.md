@@ -13,4 +13,4 @@ Exploring Authoring Techniques - Authoring 1
 
 #### The text content in the lightbox can remain placeholder-only (lorem ipsum).
 
-###### Create a well-written readme file and branches as necessary, following workflow as demonstrated in class. Use pull requests and merge as you go.
+#### Create a well-written readme file and branches as necessary, following workflow as demonstrated in class. Use pull requests and merge as you go.
