@@ -1,58 +1,39 @@
-/* element (tag, classes, ids) {
-    stye-type: my choice;
-    border: none;
-    background;
-}
+/* these all apply to the body element -> global rules */
 
-element { rule @1 } */
-
-*{
+* {
     border: none;
     padding: 0;
     margin: 0;
-    box-sizing: border-box;
+    box-sizing: border-box; 
 }
 
-/* <hidden><hidden>
-hidden
 
-<div class="hidden"></div>
-.hidden
+ .hidden { display: none; }
 
-<div id="hidden"></div>
-#hidden  */
+html, body { height: 100% }
 
-.hidden { display: none;}
-
-html, body {
-    height: 100%;
-}
-
-body {
-    font-family: sans-serif;
-    background-color: black;
-    color: white;
+body { 
+  font-family: sans-serif;
+  background-color: black;
+  color: white;
 }
 
 /* main header rules */
 header {
-    background-color: red;
-    text-align: center ;
+    background-color: black;
     position: sticky;
     top: 0;
-
+    text-align: center ;
 }
 
-#marvel-logo{
-width: 300px;
-padding: 10px 0;
-}
+#main_logo{ width: 500px; padding: 10px 0;}
+
 /* main rules here */
 #character_nav{
  text-align:center;
  background-color: #675050;
 
- background-image: url('../img/characters_art_mas_mob_01.jpeg');
+ background-image: url('../img/Daydream.jpeg');
  background-repeat: no-repeat;
  background-size: cover;
 
@@ -61,45 +42,156 @@ padding: 10px 0;
 
 .characters{ list-style-type: none;}
 
-.characters,li {
+.characters li {
     position: relative;
    display: inline-block;
-   margin: 10px 8px;
+   margin: 10px 7px;
+
+   background-color: black;
+
+   text-align: left;
+   cursor: pointer;
 }
 
-/* footer rules here */
-footer {
+.characters li h5{
+    position: relative;
     color: white;
-    padding: 20px 0 20px 0;
-    text-align: center;
+    padding: 12px 8px;
+
+    z-index: 500;
 }
 
-.sticky_footer {
-    position: sticky;
-    top: 100%;
-    background-color: rgb(40, 37, 37);
-    height: 80px;
+.characters li a { text-decoration: none;}
 
-    background-color:black;
-    text-align:left;
-    cursor:pointer;
+.green_bumper {
+    width: 100%;
+    height: 6px;
+    background-color: rgb(98, 195, 98);
+
+    transition: height 0.8 ease;
+
+    position: absolute;
 }
 
-article {
-    padding: 20px;
-}
+.characters li:hover .green_bumper { height: 60px}
 
+article { padding: 20px; }
+
+/* select the h3 tag inside the article tag on the page */
+/* a selector followed by a space and then ANOTHER selector gets a reference to the parent element and then the child element or elements inside of it */
 article h3 {
     font-size: 2em;
     text-align: center;
     margin-bottom: 14px;
 }
 
+/* select the p tag inside the article tag on the page */
 article p {
     width: 80%;
     font-size: 18px;
     line-height: 1.2;
     text-align: center;
     margin: 0 auto;
+}
+
+.sprite {
+    width: 200px;
+    height: 250px;
+
+    background-image: url('../img/txt_sprite.png');
+}
+
+#yeonjun { background-position: -0px 0; }
+#soobin { background-position: -200px 0; }
+#beomgyu { background-position: -400px 0; }
+#taehyun { background-position: -600px 0; }
+#kai { background-position: -800px 0; }
+
+.sprite:hover{ background-position-y: -250px !important; }
+
+/* footer rules here */
+footer {
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.sticky_footer {
+    position: sticky;
+    top: 100%;
+
+    height: 60px;
+    background-color: rgb(71, 33, 33);
+}
+
+ /* lightbox rules here */
+
+.lightbox { 
+    width: 100vw; /* vw = viewport width => screen width */
+    height: 100vh; /* vh = viewport height => screen height */
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background-color: rgba(0, 0, 0, 0.85);
+    background-image: url('../img/Yeonjun_2.png');
+    background-repeat: no-repeat;
+
+    background-size: 95vh; /* 95% of the viewport height */
+    background-position: 0px bottom;
+
+    z-index: 5000;
+
+    display: none;
+}
+
+#lightbox2 { background-image: url('../img/Soobin_2.png'); 
+    background-size: 80vh; /* 80% of the viewport height */
 
 }
+
+#lightbox3 { background-image: url('../img/Beomgyu.png'); 
+    background-size: 75vh; /* 85% of the viewport height */
+}
+
+#lightbox4 { background-image: url('../img/Taehyun.png'); 
+    background-size:85vh; /* 85% of the viewport height */
+}
+
+#lightbox5 { background-image: url('../img/Kai_2.png'); 
+    background-size: 69vh; /* 69% of the viewport height */
+}
+
+
+.lightbox_close {
+    position: relative;
+    top: 20px;
+    left: 95%;
+
+    color: white;
+    font-size: 3em;
+
+    text-decoration: none;
+
+    font-weight: bolder;
+}
+
+.lightbox_close:hover { opacity: 0.5; color:  rgb(98, 195, 98); }
+
+.lightbox article {
+    width: 50%;
+    margin-left: 50%;
+    padding-top: 50px;
+}
+
+.lb_text, .lb_heading { text-align: left; }
+
+.lb_text {
+    line-height: 2 !important;
+    margin-left: 0;
+    padding-top: 0.5;
+}
+
+/* turn the lightbox on using the :target pseudo selector */
+.lightbox:target { display: block; }
