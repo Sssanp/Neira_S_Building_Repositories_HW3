@@ -1,4 +1,3 @@
-
 /* these all apply to the body element -> global rules */
 
 * {
@@ -99,7 +98,7 @@ article p {
     width: 200px;
     height: 250px;
 
-    background-image: url('../img/txt_spritee.png');
+    background-image: url('../img/txt_sprite.png');
 }
 
 #yeonjun { background-position: -0px 0; }
@@ -136,7 +135,8 @@ footer {
     left: 0;
 
     background-color: rgba(0, 0, 0, 0.85);
-    background-image: url('../img/Yeonjun_png.png');
+
+    background-image: url('../img/Yeonjun_2.png');
     background-repeat: no-repeat;
 
     background-size: 95vh; /* 95% of the viewport height */
